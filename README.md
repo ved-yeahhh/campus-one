@@ -73,12 +73,12 @@ The main goal was to create a **trustworthy, professional, and user-friendly** d
 
 ### 👩‍💻 Developed By
 
-**Snehalatha Arakkonam**  
+**vedant jagtap**  
 *Frontend Web Developer*
 
-- **Email**: asnehalatha363@gmail.com
+- **Email**: jvedant2109@gmail.com
 - **LinkedIn**: [linkedin.com/in/sneha-arakkonam](https://www.linkedin.com/in/sneha-arakkonam)
-- **GitHub**: [github.com/snehalathaArakkonam](https://github.com/snehalathaArakkonam)
+- **GitHub**: [https://github.com/ved-yeahhh/campus-one](https://github.com/ved-yeahhh/campus-one)
 
 ---
 
