@@ -2,14 +2,10 @@
 
 
 
-A **modern, elegant, and fully functional** multipage school website built for **CAMPUS ONE School**, Nellore, Andhra Pradesh.
+A **modern, elegant, and fully functional** multipage school website built for **CAMPUS ONE School**, Sangli, Maharashtra.
 and this website delivers a trustworthy, professional, and user-friendly digital experience.
 
 ---
-
-### 🚀 Live Demo
-
-**[View Live Website →](https://campusoneschool-officialwebsite.netlify.app/)**
 
 ---
 
