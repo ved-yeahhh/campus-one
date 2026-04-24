@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Title -->
+  <title>CAMPUS ONE | Official School Website</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Custom Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ff9f08',
+            secondary: '#003087',
+            accent: '#f4c430',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
+
+<!-- HEADER (IDENTICAL ACROSS ALL PAGES) -->
+  <header class="school-header bg-white dark:bg-gray-900 border-b border-gray-100 sticky top-0 z-50">
+    <!-- Top Orange Bar -->
+    <div class="bg-primary text-white py-2 text-sm">
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div class="font-bold flex items-center gap-2">
+          <span class="text-2xl"></span>
+         welcome to CAMPUSONE 
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-xs uppercase tracking-widest">
+          <span>Affiliated to CBSE • New Delhi</span>
+          <span>Nellore, Andhra Pradesh</span>
+          <span>Established 2008</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#" onclick="event.preventDefault(); alert('🌐 Language feature coming soon!')" class="text-xs hover:underline hover:text-white/80">हिंदी</a>
+          <button id="dark-toggle" class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-white/20">
+            <span id="theme-icon" class="text-lg">🌙</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-between items-center py-5">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-12 h-12 bg-secondary text-white rounded-2xl flex items-center justify-center flex-shrink-0 shadow-inner">
+            <img src="images/campusonefinallogo.png" alt="CAMPUS ONE Logo" class="w-full h-full object-contain p-1 rounded-2xl" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <h1 class="text-3xl font-bold tracking-tighter text-secondary">CAMPUS ONE</h1>
+            <p class="text-[10px] text-gray-500 -mt-1">Nurturing Excellence</p>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center gap-x-8 text-base font-medium">
+          <a href="index.html" class="text-primary hover:text-orange-600 transition-colors">Home</a>
+          <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">About</a>
+          <a href="academics.html" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">Academics</a>
+          <a href="admissions.html" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">Admissions</a>
+          <a href="facilities.html" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">Facilities</a>
+          <a href="news-events.html" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">News &amp; Events</a>
+          <a href="achievements.html" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">Achievements</a>
+          <a href="gallery.html" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">Gallery</a>
+          <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">Contact</a>
+          <a href="login.html" id="login-link" class="bg-primary hover:bg-orange-600 text-white px-6 py-2 rounded-3xl text-sm font-semibold transition-all">Login</a>
+        </nav>
+
+        <!-- Search + Hamburger -->
+        <div class="flex items-center gap-3">
+          <div class="relative hidden md:block">
+            <input id="search-input" type="text" 
+                   class="bg-gray-100 dark:bg-gray-800 border border-transparent focus:border-primary rounded-3xl pl-10 py-3 w-72 text-sm focus:outline-none dark:text-white"
+                   placeholder="Search campus...">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 absolute left-4 top-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 01-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <button id="hamburger" class="md:hidden p-2 text-2xl hover:text-primary">☰</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 px-6 py-4">
+      <div class="flex flex-col gap-2 text-base font-medium">
+        <a href="index.html" class="py-2 px-3 text-primary rounded hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
+        <a href="about.html" class="py-2 px-3 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-100 dark:hover:bg-gray-800">About Us</a>
+        <a href="academics.html" class="py-2 px-3 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Academics</a>
+        <a href="admissions.html" class="py-2 px-3 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Admissions 2026-27</a>
+        <a href="facilities.html" class="py-2 px-3 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Facilities</a>
+        <a href="news-events.html" class="py-2 px-3 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-100 dark:hover:bg-gray-800">News &amp; Events</a>
+        <a href="achievements.html" class="py-2 px-3 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Achievements</a>
+        <a href="gallery.html" class="py-2 px-3 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Gallery</a>
+        <a href="contact.html" class="py-2 px-3 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+        <a href="login.html" class="bg-primary text-white text-center py-3 px-3 rounded-3xl font-semibold my-2">Login / Portal</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="relative h-screen flex items-center bg-cover bg-center" style="background-image: url('https://picsum.photos/id/1015/2000/1200')">
+      <div class="absolute inset-0 bg-gradient-to-r from-secondary/90 to-transparent"></div>
+      <div class="relative max-w-7xl mx-auto px-6 text-white">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 bg-white/20 text-white text-sm font-medium px-6 py-2 rounded-3xl mb-6 backdrop-blur-md">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+            </span>
+            ADMISSIONS 2026-27 OPEN
+          </div>
+          <h1 class="text-6xl md:text-7xl font-bold leading-none mb-6">Welcome to<br>CAMPUS ONE</h1>
+          <p class="text-2xl mb-10 text-white/90">"The future belongs to those who believe in the beauty of their dreams."</p>
+        
+          <div class="flex flex-wrap gap-4">
+            <a href="admissions.html" 
+               class="inline-flex items-center bg-white text-secondary hover:bg-accent hover:text-secondary px-10 py-5 rounded-3xl text-xl font-semibold transition-all">
+              Apply Now → 
+            </a>
+            <a href="about.html" 
+               class="inline-flex items-center border-2 border-white px-8 py-5 rounded-3xl text-xl font-medium hover:bg-white/10">
+              Know Our Story
+            </a>
+          </div>
+          <div class="mt-12 flex items-center gap-8 text-sm">
+            <div><span class="font-mono text-4xl font-bold">18</span><br>Years of Excellence</div>
+            <div class="h-10 w-px bg-white/40"></div>
+            <div>CBSE • Class 1 to XII</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTICE TICKER -->
+    <div class="bg-secondary text-white py-3 overflow-hidden">
+      <div class="flex ticker-content whitespace-nowrap">
+        <div class="flex items-center gap-8 px-8">
+          <span class="bg-accent text-secondary text-xs font-bold px-3 py-1 rounded">NEW</span>
+          <span>Admissions 2026-27 are now open • Last date: 30 April 2026</span>
+          <span class="bg-accent text-secondary text-xs font-bold px-3 py-1 rounded">NEW</span>
+          <span>Annual Sports Meet 2026 registration started • 15th April</span>
+          <span class="bg-accent text-secondary text-xs font-bold px-3 py-1 rounded">LIVE</span>
+          <span>Board Exam 2026 results declared • Congratulations to our toppers!</span>
+          <span class="bg-accent text-secondary text-xs font-bold px-3 py-1 rounded">NEW</span>
+          <span>Admissions 2026-27 are now open • Last date: 30 April 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATISTICS -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-white dark:bg-gray-900 rounded-3xl p-8 text-center shadow-xl">
+          <div class="text-5xl font-bold text-primary mb-2">1450</div>
+          <div class="uppercase text-sm tracking-widest">Students</div>
+        </div>
+        <div class="bg-white dark:bg-gray-900 rounded-3xl p-8 text-center shadow-xl">
+          <div class="text-5xl font-bold text-primary mb-2">85</div>
+          <div class="uppercase text-sm tracking-widest">Dedicated Teachers</div>
+        </div>
+        <div class="bg-white dark:bg-gray-900 rounded-3xl p-8 text-center shadow-xl">
+          <div class="text-5xl font-bold text-primary mb-2">45</div>
+          <div class="uppercase text-sm tracking-widest">Classrooms</div>
+        </div>
+        <div class="bg-white dark:bg-gray-900 rounded-3xl p-8 text-center shadow-xl">
+          <div class="text-5xl font-bold text-primary mb-2">18</div>
+          <div class="uppercase text-sm tracking-widest">Years of Excellence</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCIPAL'S MESSAGE -->
+    <section class="max-w-7xl mx-auto px-6 py-16 bg-white dark:bg-gray-900">
+      <div class="grid md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-5">
+          <img src="https://indianschoolsur.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-01-16-at-17.57.06.jpeg" alt="Principal" 
+               class="rounded-3xl shadow-2xl w-full">
+        </div>
+        <div class="md:col-span-7">
+          <span class="uppercase text-primary font-semibold tracking-widest">Principal's Desk</span>
+          <h2 class="text-4xl font-bold mt-2 mb-6">Dear Parents &amp; Students,</h2>
+          <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+            At CAMPUS ONE, we believe education is not just about textbooks but about building character, curiosity and compassion. 
+            Our mission is to create confident global citizens rooted in Indian values.
+          </p>
+          <p class="mt-6 text-lg font-medium">— Dr. S. SRINIVASAN, Principal</p>
+          <a href="about.html" class="inline-block mt-8 text-primary font-medium flex items-center gap-2">
+            Read full message <span class="text-2xl">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST NEWS -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <div class="flex justify-between items-baseline mb-8">
+        <h2 class="text-4xl font-bold">Latest News &amp; Updates</h2>
+        <a href="news-events.html" class="text-primary flex items-center gap-1 hover:gap-3 transition-all">View All News →</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="notice-card bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow">
+          <div class="h-2 bg-accent"></div>
+          <div class="p-6">
+            <div class="flex justify-between text-xs mb-4">
+              <span class="bg-red-100 text-red-600 px-3 py-1 rounded-3xl">NEW</span>
+              <span class="text-gray-400">2 Apr 2026</span>
+            </div>
+            <h4 class="font-semibold text-xl mb-3">CBSE Board Exam 2026 Results Declared</h4>
+            <p class="text-gray-600 dark:text-gray-400">Our Class X and XII students achieved 100% pass percentage with 12 students scoring 95% and above.</p>
+          </div>
+        </div>
+        <div class="notice-card bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow">
+          <div class="h-2 bg-primary"></div>
+          <div class="p-6">
+            <div class="flex justify-between text-xs mb-4">
+              <span class="px-3 py-1 rounded-3xl bg-blue-100 text-blue-600">Event</span>
+              <span class="text-gray-400">28 Mar 2026</span>
+            </div>
+            <h4 class="font-semibold text-xl mb-3">Annual Day Celebrations 2026</h4>
+            <p class="text-gray-600 dark:text-gray-400">A grand cultural evening with performances by students from all classes.</p>
+          </div>
+        </div>
+        <div class="notice-card bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow">
+          <div class="h-2 bg-accent"></div>
+          <div class="p-6">
+            <div class="flex justify-between text-xs mb-4">
+              <span class="px-3 py-1 rounded-3xl bg-emerald-100 text-emerald-700">Announcement</span>
+              <span class="text-gray-400">25 Mar 2026</span>
+            </div>
+            <h4 class="font-semibold text-xl mb-3">Summer Vacation Schedule Released</h4>
+            <p class="text-gray-600 dark:text-gray-400">Vacation from 10th May to 30th June 2026. Online summer classes available.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISION & MISSION + UPCOMING EVENTS + TEASER GALLERY -->
+    <section class="max-w-7xl mx-auto px-6 py-16 bg-gray-100 dark:bg-gray-900 grid md:grid-cols-3 gap-8">
+      <!-- Vision Mission -->
+      <div class="bg-white dark:bg-gray-800 rounded-3xl p-8">
+        <h3 class="uppercase text-sm font-semibold text-secondary mb-4">Our Vision &amp; Mission</h3>
+        <div class="space-y-8">
+          <div>
+            <div class="font-medium flex items-center gap-2"><span class="text-accent text-2xl">🎯</span> Vision</div>
+            <p class="mt-2">To be a model institution that produces enlightened, ethical and empowered citizens.</p>
+          </div>
+          <div>
+            <div class="font-medium flex items-center gap-2"><span class="text-accent text-2xl">🚀</span> Mission</div>
+            <p class="mt-2">Providing holistic education with modern pedagogy and strong Indian cultural values.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming Events -->
+      <div class="bg-white dark:bg-gray-800 rounded-3xl p-8">
+        <h3 class="uppercase text-sm font-semibold text-secondary mb-6">Upcoming Events</h3>
+        <div class="space-y-6">
+          <div class="flex gap-4">
+            <div class="text-center">
+              <div class="text-xs bg-primary text-white w-12 h-12 flex flex-col items-center justify-center rounded-2xl">15</div>
+              <div class="text-xs mt-1">APR</div>
+            </div>
+            <div>
+              <div class="font-semibold">Inter-House Cricket Tournament</div>
+              <div class="text-sm text-gray-500">15 April • Sports Ground</div>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="text-center">
+              <div class="text-xs bg-primary text-white w-12 h-12 flex flex-col items-center justify-center rounded-2xl">22</div>
+              <div class="text-xs mt-1">APR</div>
+            </div>
+            <div>
+              <div class="font-semibold">Parent-Teacher Meeting (Class VI-X)</div>
+              <div class="text-sm text-gray-500">22 April • School Auditorium</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Teaser -->
+      <div>
+        <h3 class="uppercase text-sm font-semibold text-secondary mb-6">Campus Moments</h3>
+        <div class="grid grid-cols-3 gap-3">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUveGE6_vznsTcT-uJGRoSmYlQZp-4cUKugA&s" class="rounded-3xl hover:scale-105 transition-transform cursor-pointer" onclick="alert('Image enlarged (demo)')">
+          <img src="https://i.pinimg.com/736x/07/7b/d8/077bd8ff169b89c58f4ae1aeb0a53c28.jpg" class="rounded-3xl hover:scale-105 transition-transform cursor-pointer" onclick="alert('Image enlarged (demo)')">
+          <img src="https://thedelekarchives.wordpress.com/wp-content/uploads/2020/10/school-sports-1.jpg" class="rounded-3xl hover:scale-105 transition-transform cursor-pointer" onclick="alert('Image enlarged (demo)')">
+        </div>
+        <a href="gallery.html" class="mt-6 text-primary flex items-center text-sm font-medium">Explore full gallery →</a>
+      </div>
+    </section>
+  </main>
+<!-- FOOTER -->
+<footer class="bg-secondary text-white mt-12">
+  <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
+
+    <!-- Logo + Description -->
+    <div>
+      <div class="flex items-center gap-4 mb-4">
+        <img 
+          src="./images/campusonefinallogo.png" 
+          alt="CampusOne Logo" 
+          class="w-16 h-16 object-contain"
+        >
+        <h1 class="text-3xl font-semibold tracking-wide">
+          CAMPUS ONE
+        </h1>
+      </div>
+
+      <p class="text-sm opacity-75">
+        A premier CBSE school. At CampusOne, we don’t just educate minds — we inspire purpose, build character, and shape future leaders.
+      </p>
+
+      <p class="text-xs mt-6 opacity-60">
+        Empowering young minds since 2008
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h5 class="font-semibold mb-4">Quick Links</h5>
+      <ul class="space-y-2 text-sm opacity-75">
+        <li><a href="academics.html" class="hover:text-accent">Curriculum</a></li>
+        <li><a href="admissions.html" class="hover:text-accent">Admissions</a></li>
+        <li><a href="facilities.html" class="hover:text-accent">Our Facilities</a></li>
+        <li><a href="achievements.html" class="hover:text-accent">Achievements</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h5 class="font-semibold mb-4">Contact Us</h5>
+      <p class="text-sm opacity-75">
+        Survey No. 45, Venkatachalam Road,<br>
+        Sangli , Maharashtra 416410
+      </p>
+      <p class="mt-4 text-sm opacity-75">📞 +91 86123 45678</p>
+      <p class="text-sm opacity-75">✉️ info@campusone.edu.in</p>
+    </div>
+
+    
+    <div>
+      <h5 class="font-semibold mb-4">Follow Us</h5>
+      <div class="flex gap-4 text-2xl">
+        <span class="cursor-pointer hover:text-accent">📘</span>
+        <span class="cursor-pointer hover:text-accent">𝕏</span>
+        <span class="cursor-pointer hover:text-accent">📸</span>
+        <span class="cursor-pointer hover:text-accent">▶️</span>
+      </div>
+
+      <div class="mt-8 text-xs opacity-60">
+        © 2026 CAMPUS ONE School. All Rights Reserved.
+      </div>
+    </div>
+
+  </div>
+
+  
+  <div class="border-t border-white/20 mt-6 py-6 text-center text-sm opacity-80">
+    <p class="mb-2">
+      This website is made by <span class="font-semibold">vedant & Ashish</span>
+    </p>
+    <p>📞 Phone: 7387116373 | ✉️ Email: jvedant2109@gmail.com</p>
+    <p class="mt-2">
+      <a href="https://www.linkedin.com/" target="_blank" class="hover:text-accent">LinkedIn</a> |
+      <a href="https://gist.github.com/ved-yeahhh" target="_blank" class="hover:text-accent">GitHub</a>
+    </p>
+  </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

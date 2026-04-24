@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAMPUS ONE | Contact Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ff9f08',
+            secondary: '#003087',
+            accent: '#f4c430',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 font-sans">
+  
+  <!-- HEADER -->
+  <header class="school-header bg-white dark:bg-gray-900 border-b border-gray-100 sticky top-0 z-50">
+    <div class="bg-primary text-white py-2 text-sm">
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div class="font-bold flex items-center gap-2">
+          CAMPUS ONE
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-xs uppercase tracking-widest">
+          <span>Affiliated to CBSE • New Delhi</span>
+          <span>sangli, Maharashtra</span>
+          <span>Established 2008</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#" onclick="alert('Language switch demo')" class="text-xs hover:underline">हिंदी</a>
+          <button id="dark-toggle" class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-white/20">
+            <span id="theme-icon" class="text-lg">🌙</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-between items-center py-5">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="images/campusonefinallogo.png" 
+               alt="CAMPUS ONE Logo" 
+               class="h-16 w-auto object-contain">
+        </a>
+        <nav class="hidden md:flex items-center gap-x-8 text-base font-medium">
+          <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+          <a href="about.html" class="hover:text-primary transition-colors">About</a>
+          <a href="academics.html" class="hover:text-primary transition-colors">Academics</a>
+          <a href="admissions.html" class="hover:text-primary transition-colors">Admissions</a>
+          <a href="facilities.html" class="hover:text-primary transition-colors">Facilities</a>
+          <a href="news-events.html" class="hover:text-primary transition-colors">News &amp; Events</a>
+          <a href="achievements.html" class="hover:text-primary transition-colors">Achievements</a>
+          <a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a>
+          <a href="contact.html" class="hover:text-primary transition-colors active">Contact</a>
+          <a href="login.html" id="login-link" class="bg-primary hover:bg-orange-600 text-white px-6 py-2 rounded-3xl text-sm font-semibold transition-all">Login</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <div class="relative hidden md:block">
+            <input id="search-input" type="text" 
+                   class="bg-gray-100 dark:bg-gray-800 border border-transparent focus:border-primary rounded-3xl pl-10 py-3 w-72 text-sm focus:outline-none" 
+                   placeholder="Search campus...">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 absolute left-4 top-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 01-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <button id="hamburger" class="md:hidden p-2 text-3xl">☰</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t px-6 py-4">
+      <div class="flex flex-col gap-4 text-lg font-medium">
+        <a href="index.html" class="py-2">Home</a>
+        <a href="about.html" class="py-2">About Us</a>
+        <a href="academics.html" class="py-2">Academics</a>
+        <a href="admissions.html" class="py-2">Admissions 2026-27</a>
+        <a href="facilities.html" class="py-2">Facilities</a>
+        <a href="news-events.html" class="py-2">News &amp; Events</a>
+        <a href="achievements.html" class="py-2">Achievements</a>
+        <a href="gallery.html" class="py-2">Gallery</a>
+        <a href="contact.html" class="py-2">Contact</a>
+        <a href="login.html" class="bg-primary text-white text-center py-4 rounded-3xl">Login / Portal</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid md:grid-cols-12 gap-12">
+      <!-- Contact Form -->
+      <div class="md:col-span-7">
+        <h1 class="text-5xl font-bold mb-2">Get in Touch</h1>
+        <p class="text-gray-600 dark:text-gray-400">We'd love to hear from you. Send us a message!</p>
+
+        <form id="contact-form" 
+              onsubmit="event.preventDefault(); if(validateForm(this)){ alert('✅ Message sent successfully! We will reply within 24 hours.'); this.reset(); }" 
+              class="mt-10 bg-white dark:bg-gray-900 rounded-3xl p-10 shadow-xl">
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <input type="text" placeholder="Your Full Name" required 
+                   class="border border-gray-300 dark:border-gray-700 rounded-3xl px-6 py-5 focus:outline-none focus:border-primary">
+            <input type="email" placeholder="Email Address" required 
+                   class="border border-gray-300 dark:border-gray-700 rounded-3xl px-6 py-5 focus:outline-none focus:border-primary">
+          </div>
+          
+          <textarea placeholder="Your Message / Query" rows="6" required 
+                    class="mt-6 border border-gray-300 dark:border-gray-700 rounded-3xl px-6 py-5 w-full focus:outline-none focus:border-primary"></textarea>
+          
+          <button type="submit" 
+                  class="mt-10 w-full bg-secondary hover:bg-blue-900 text-white py-6 text-xl font-semibold rounded-3xl transition-all">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info + Map -->
+      <div class="md:col-span-5 space-y-8">
+        <div class="bg-white dark:bg-gray-900 rounded-3xl p-8">
+          <h3 class="font-semibold text-2xl mb-6">Our School</h3>
+          <p class="text-lg">Survey No. 45, Venkatachalam Road,<br>sangli, Maharashtra 416410</p>
+          
+          <div class="mt-8 space-y-4 text-lg">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">📞</span>
+              <a href="tel:9492839837" class="hover:text-primary">+91 94928 39837</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">✉️</span>
+              <a href="mailto:bvdu@gmail.com" class="hover:text-primary">bvdu12343@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Map Embed -->
+        <div class="bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-xl">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.5!2d79.98!3d14.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDI3JzAwLjAiTiA3OcKwNTgnNDguOCJF!5e0!3m2!1sen!2sin!4v1710000000000" 
+            width="100%" 
+            height="380" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <!-- Developer Credit -->
+        <div class="bg-gradient-to-br from-primary to-orange-600 text-white rounded-3xl p-8 text-sm">
+          <p class="font-medium">Website Developed by:</p>
+          <p class="mt-2"> vedant & Ashish</p>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 mt-4 text-xs">
+            <a href="https://www.linkedin.com/" target="_blank" class="hover:underline">LinkedIn</a>
+            <a href="https://github.com/ved-yeahhh/" target="_blank" class="hover:underline">GitHub</a>
+            <a href="mailto:asnehalatha363@gmail.com" class="hover:underline">Email</a>
+          </div>
+          <p class="text-xs mt-6 opacity-75">Feel free to contact me for any improvements or custom projects.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-secondary text-white">
+    <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-3 text-2xl font-bold mb-4">
+          <img src="images/campusonefinallogo.png" alt="CAMPUS ONE" class="h-9 w-auto">
+          CAMPUS ONE
+        </div>
+        <p class="text-sm opacity-75">
+          A premier CBSE school inspired by Kendriya Vidyalaya ethos. 
+          Nurturing excellence, values and future leaders.
+        </p>
+        <p class="text-xs mt-6 opacity-60">© 2026 CAMPUS ONE School. All Rights Reserved.</p>
+      </div>
+      <div>
+        <h5 class="font-semibold mb-4">Quick Links</h5>
+        <ul class="space-y-2 text-sm opacity-75">
+          <li><a href="academics.html" class="hover:text-accent">Curriculum</a></li>
+          <li><a href="admissions.html" class="hover:text-accent">Admissions</a></li>
+          <li><a href="facilities.html" class="hover:text-accent">Facilities</a></li>
+          <li><a href="achievements.html" class="hover:text-accent">Achievements</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-semibold mb-4">Contact Us</h5>
+        <p class="text-sm opacity-75">
+          Survey No. 45, Venkatachalam Road,<br>
+          Sangli, Maharashtra  41640
+        </p>
+        <p class="mt-4 text-sm opacity-75">📞 +91 94928 39837</p>
+        <p class="text-sm opacity-75">✉️ developerved123@gmail.com</p>
+      </div>
+      <div>
+        <h5 class="font-semibold mb-4">Follow Us</h5>
+        <div class="flex gap-5 text-3xl">
+          <span class="cursor-pointer hover:text-accent">📘</span>
+          <span class="cursor-pointer hover:text-accent">𝕏</span>
+          <span class="cursor-pointer hover:text-accent">📸</span>
+          <span class="cursor-pointer hover:text-accent">▶️</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

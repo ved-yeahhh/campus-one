@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAMPUS ONE | Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ff9f08',
+            secondary: '#003087',
+            accent: '#f4c430',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 font-sans min-h-screen flex items-center justify-center">
+  <div class="max-w-md w-full mx-4">
+    <div class="text-center mb-8">
+      <div class="mx-auto w-20 h-20 bg-secondary rounded-3xl flex items-center justify-center text-5xl mb-4 shadow-lg">
+        <img src="images/campusonefinallogo.png" alt="Logo" class="w-full h-full object-contain p-2 rounded-3xl" onerror="this.style.display='none'">
+      </div>
+      <h1 class="text-4xl font-bold">CAMPUS ONE</h1>
+      <p class="text-secondary font-medium">Portal Login</p>
+    </div>
+
+    <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl p-10">
+      <h2 class="text-2xl font-semibold mb-8 text-center">Sign in to your role</h2>
+      
+      <div class="grid grid-cols-3 gap-4 mb-10">
+        <button onclick="fakeLogin('Admin')" class="flex flex-col items-center justify-center p-4 border-2 border-gray-300 dark:border-gray-700 hover:border-primary rounded-3xl transition-all hover:bg-primary/10">
+          👨‍💼<br><span class="text-xs mt-2 font-medium">Admin</span>
+        </button>
+        <button onclick="fakeLogin('Teacher')" class="flex flex-col items-center justify-center p-4 border-2 border-gray-300 dark:border-gray-700 hover:border-primary rounded-3xl transition-all hover:bg-primary/10">
+          👩‍🏫<br><span class="text-xs mt-2 font-medium">Teacher</span>
+        </button>
+        <button onclick="fakeLogin('Student/Parent')" class="flex flex-col items-center justify-center p-4 border-2 border-gray-300 dark:border-gray-700 hover:border-primary rounded-3xl transition-all hover:bg-primary/10">
+          👨‍👧<br><span class="text-xs mt-2 font-medium">Student / Parent</span>
+        </button>
+      </div>
+
+      <div class="text-xs text-center text-gray-500 mb-8 bg-gray-100 dark:bg-gray-800 p-3 rounded-3xl">
+        <strong>Demo Mode:</strong> Any username / password works.<br>
+        Role-based access is simulated.
+      </div>
+      
+      <button onclick="window.location.href='index.html'" class="w-full text-gray-600 dark:text-gray-400 hover:text-primary transition-colors underline text-sm">← Back to Homepage</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

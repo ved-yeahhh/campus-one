@@ -1,0 +1,33 @@
+
+/* Extra custom styles beyond Tailwind CDN */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.ticker-content {
+  animation: marquee 25s linear infinite;
+}
+
+.notice-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.notice-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* KVS-inspired subtle patterns */
+.school-header {
+  box-shadow: 0 2px 10px rgba(255, 159, 8, 0.2);
+}
+
+.modal {
+  animation: modalPop 0.3s ease forwards;
+}
+
+@keyframes modalPop {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
